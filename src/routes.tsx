@@ -1,3 +1,4 @@
+import Layout from "components/Layout";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -6,7 +7,7 @@ export default function AppRoutes() {
     <Router>
       <Switch>
         <Route path="/">
-          <h1>Hello World</h1>
+          <Layout />
         </Route>
       </Switch>
     </Router>
