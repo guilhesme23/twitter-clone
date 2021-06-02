@@ -1,5 +1,6 @@
 import { User } from "@types";
 import React from "react";
+import formatDate from "utils/formatDate";
 
 import {
   CakeIcon,
@@ -15,28 +16,7 @@ interface Props {
 }
 
 const ProfileSummary: React.FC<Props> = ({ user }) => {
-  const formatDate = () => {
-    const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-
-    const date = new Date(user.birthdate);
-
-    return `${
-      monthNames[date.getMonth()]
-    } ${date.getDay()}, ${date.getFullYear()}`;
-  };
+  
   return (
     <Container>
       <ProfileContent>
@@ -47,7 +27,7 @@ const ProfileSummary: React.FC<Props> = ({ user }) => {
 
         <ul>
           <li>
-            <CakeIcon /> Born {formatDate()}
+            <CakeIcon /> Born {formatDate(user.birthdate)}
           </li>
           <li>
             <LocationIcon /> {user.location}

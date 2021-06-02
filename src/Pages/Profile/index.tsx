@@ -31,7 +31,7 @@ const Profile: React.FC = () => {
 
   return (
     <Container>
-      <Navbar backIcon backLocation="/" title="Guiherme" sub="747 tweets" />
+      <Navbar backIcon backLocation="/" title={user.name} sub={`${user.statuses_count} tweets`} />
       <ProfileBanner
         bannerUrl={user.profile_banner_url}
         avatarUrl={user.profile_image_url_https}
