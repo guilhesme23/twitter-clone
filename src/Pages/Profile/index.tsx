@@ -32,14 +32,7 @@ const Profile: React.FC = () => {
         avatarUrl={user.profile_image_url_https}
       />
       <ProfileSummary 
-        name={user.name}
-        birthdate={user.birthdate}
-        description={user.description}
-        username={user.screen_name}
-        followers_count={user.followers_count}
-        friends_count={user.friends_count}
-        location={user.location}
-        statuses_count={user.statuses_count}
+        user={user}
       />
     </Container>
   );

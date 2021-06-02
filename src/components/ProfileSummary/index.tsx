@@ -1,3 +1,4 @@
+import { User } from "@types";
 import React from "react";
 
 import {
@@ -10,19 +11,10 @@ import {
 } from "./styles";
 
 interface Props {
-  name: string;
-  username: string;
-  description: string;
-  protected?: boolean;
-  verified?: boolean;
-  followers_count: number;
-  friends_count: number;
-  statuses_count: number;
-  birthdate: string;
-  location: string;
+  user: User
 }
 
-const ProfileSummary: React.FC<Props> = (props) => {
+const ProfileSummary: React.FC<Props> = ({ user }) => {
   const formatDate = () => {
     const monthNames = [
       "January",
@@ -39,7 +31,7 @@ const ProfileSummary: React.FC<Props> = (props) => {
       "December",
     ];
 
-    const date = new Date(props.birthdate);
+    const date = new Date(user.birthdate);
 
     return `${
       monthNames[date.getMonth()]
@@ -48,27 +40,27 @@ const ProfileSummary: React.FC<Props> = (props) => {
   return (
     <Container>
       <ProfileContent>
-        <h3>{props.name}</h3>
-        <span>@{props.username}</span>
+        <h3>{user.name}</h3>
+        <span>@{user.screen_name}</span>
 
-        <p>{props.description}</p>
+        <p>{user.description}</p>
 
         <ul>
           <li>
             <CakeIcon /> Born {formatDate()}
           </li>
           <li>
-            <LocationIcon /> {props.location}
+            <LocationIcon /> {user.location}
           </li>
         </ul>
 
         <Followage>
           <p>
-            following <span>{props.friends_count}</span>
+            following <span>{user.friends_count}</span>
           </p>
 
           <p>
-            <span>{props.followers_count}</span> followers
+            <span>{user.followers_count}</span> followers
           </p>
         </Followage>
       </ProfileContent>
