@@ -1,29 +1,28 @@
-import styled from 'styled-components';
-import {BiArrowBack} from 'react-icons/bi';
+import styled from "styled-components";
+import { BiArrowBack } from "react-icons/bi";
 
 export const Container = styled.div`
   background: var(--primary);
   color: var(--white);
   position: sticky;
   top: 0;
-  
+
   border-bottom: 2px solid var(--outline);
   z-index: 2;
-  padding: .5em;
-  max-width: 601px;
+  padding: 0.5em;
+  
   display: flex;
 
   > button {
-      padding: 8px;
-      border-radius: 50%;
+    padding: 8px;
+    border-radius: 50%;
 
-      cursor: pointer;
-      
-      &:hover {
-        background-color: var(--twitter-dark-hover);
-      }
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--twitter-dark-hover);
+    }
   }
-
 `;
 
 export const NavContent = styled.div`
@@ -39,13 +38,13 @@ export const NavContent = styled.div`
 
   span {
     font-size: 15px;
-    color: var(--gray)
+    color: var(--gray);
   }
 `;
 
 export const BackIcon = styled(BiArrowBack)`
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 
-    fill: var(--twitter);
+  fill: var(--twitter);
 `;

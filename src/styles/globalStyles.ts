@@ -1,10 +1,13 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    max-width: 100vw;
+    max-height: 100vh;
   }
 
   *, button, input {
@@ -34,3 +37,18 @@ const GlobalStyle = createGlobalStyle`
 `;
  
 export default GlobalStyle;
+
+export const PageContainer = styled.div`
+    background: var(--primary);
+    color: var(--white);
+
+    height: 100%;
+`;
+
+export const Wrapper = styled.div`
+  height: 100%;
+
+  max-width: 1280px;
+  display: flex;
+  justify-content: center;
+`;
