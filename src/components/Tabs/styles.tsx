@@ -31,7 +31,7 @@ export const TabContainer = styled.div`
     }
 
     &.active-tab {
-        border-bottom: 2px solid var(--twitter);
+        border-bottom: 3px solid var(--twitter);
     }
   }
 `;

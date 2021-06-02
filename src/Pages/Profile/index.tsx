@@ -37,7 +37,7 @@ const Profile: React.FC = () => {
         user={user}
       />
 
-      <Tabs labels={["Tweets", "Replies", "Media", "Likes"]}>
+      <Tabs labels={["Tweets", "Replies", "Media", "Likes"]} baseQuery={user.screen_name}>
 
       </Tabs>
     </Container>
