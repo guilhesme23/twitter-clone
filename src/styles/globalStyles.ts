@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 
     max-width: 100vw;
-    max-height: 100vh;
+    /* max-height: 100vh; */
   }
 
   *, button, input {
@@ -51,11 +51,9 @@ export const PageContainer = styled.div`
     background: var(--primary);
     color: var(--white);
 
-    height: 100%;
 `;
 
 export const Wrapper = styled.div`
-  height: 100%;
 
   max-width: 1280px;
   display: flex;

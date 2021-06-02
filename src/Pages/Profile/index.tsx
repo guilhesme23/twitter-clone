@@ -1,4 +1,5 @@
 import { User } from "@types";
+import HistoryFeed from "components/HistoryFeed";
 import Navbar from "components/Navbar";
 import ProfileBanner from "components/ProfileBanner";
 import ProfileSummary from "components/ProfileSummary";
@@ -44,7 +45,7 @@ const Profile: React.FC = () => {
         {tags.map(tag => {
           return (
             <Label key={tag} label={slugify(tag)}>
-              <h1>Content: {tag}</h1>
+              <HistoryFeed filter={slugify(tag)} userId={user.id}/>
             </Label>
           );
         })}

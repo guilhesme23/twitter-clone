@@ -22,8 +22,11 @@ export interface Tweet {
   created_at: Date | string;
   author_id: number;
   attachments?: Array<TweetMedia>;
+  likes: number;
+  retweets: number;
+  replies: number;
 }
 
 interface TweetMedia {
-    media: string
+  media: string;
 }
