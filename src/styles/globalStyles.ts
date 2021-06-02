@@ -26,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
     color: var(--twitter)
   }
 
+  html {
+    background: var(--primary);
+  }
+
   :root {
     --primary: #000;
     --secondary: #15181C;

@@ -2,8 +2,9 @@ import { User } from "@types";
 import Navbar from "components/Navbar";
 import ProfileBanner from "components/ProfileBanner";
 import ProfileSummary from "components/ProfileSummary";
-import Tabs from "components/Tabs";
+import Tabs, { Label } from "components/Tabs";
 import React, { useState } from "react";
+import slugify from "utils/slugfy";
 import { Container } from "./styles";
 
 const Profile: React.FC = () => {
@@ -26,6 +27,8 @@ const Profile: React.FC = () => {
     location: "Asia/Karachi",
   });
 
+  const tags = ["Tweets", "Replies", "Media", "Likes"];
+
   return (
     <Container>
       <Navbar backIcon backLocation="/" title="Guiherme" sub="747 tweets" />
@@ -37,8 +40,14 @@ const Profile: React.FC = () => {
         user={user}
       />
 
-      <Tabs labels={["Tweets", "Replies", "Media", "Likes"]} baseQuery={user.screen_name}>
-
+      <Tabs labels={tags} baseQuery={user.screen_name}>
+        {tags.map(tag => {
+          return (
+            <Label key={tag} label={slugify(tag)}>
+              <h1>Content: {tag}</h1>
+            </Label>
+          );
+        })}
       </Tabs>
     </Container>
   );

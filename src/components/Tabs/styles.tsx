@@ -35,3 +35,9 @@ export const TabContainer = styled.div`
     }
   }
 `;
+
+export const TabContent = styled.div`
+`;
+
+export const LabelContent = styled.div`
+`;

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import slugify from "utils/slugfy";
-import { Container, TabContainer } from "./styles";
+import { Container, LabelContent, TabContainer, TabContent } from "./styles";
 
 
 interface TabsProps {
   labels: string[];
   baseQuery?: string;
+  children: React.ReactElement<LabelProps>[];
 }
 
 const Tabs: React.FC<TabsProps> = (props) => {
@@ -15,7 +16,6 @@ const Tabs: React.FC<TabsProps> = (props) => {
   const handleClick = (e: React.MouseEvent, label: string) => {
     e.preventDefault();
     setActiveTab(slugify(label))
-    console.log(activeTab)
   }
 
   return (
@@ -35,11 +35,28 @@ const Tabs: React.FC<TabsProps> = (props) => {
           })}
         </ul>
       </TabContainer>
-      <div>
-        <h1>Content</h1>
-      </div>
+      <TabContent>
+        {props.children.map((child: React.ReactElement<LabelProps>) => {
+          if (child.props.label === activeTab) {
+            return child.props.children
+          }
+        })}
+      </TabContent>
     </Container>
   );
 };
 
 export default Tabs;
+
+interface LabelProps {
+  children: React.ReactNode,
+  label: string
+}
+
+export const Label: React.FC<LabelProps> = (props) => {
+  return (
+    <LabelContent>
+      {props.children}
+    </LabelContent>
+  );
+}
