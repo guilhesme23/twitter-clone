@@ -3,6 +3,8 @@ import styled, { css } from "styled-components";
 import { FaBirthdayCake } from "react-icons/fa";
 import { MdLocationCity } from "react-icons/md";
 
+import Button from 'components/Button'
+
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -50,23 +52,31 @@ export const Followage = styled.div`
   }
 `;
 
-export const EditProfile = styled.div`
-  border: 2px solid var(--twitter);
-  cursor: pointer;
-  color: var(--twitter);
+// export const EditProfile = styled.div`
+//   border: 2px solid var(--twitter);
+//   cursor: pointer;
+//   color: var(--twitter);
 
-  padding: 10px 19px;
-  border-radius: 25px;
+//   padding: 10px 19px;
+//   border-radius: 25px;
 
-  &:hover {
-    background: var(--twitter-dark-hover);
-  }
+//   &:hover {
+//     background: var(--twitter-dark-hover);
+//   }
 
+//   position: absolute;
+//   top: 2vh;
+//   right: 2vh;
+
+//   font-weight: bold;
+// `;
+
+export const EditProfile = styled(Button)`
   position: absolute;
   top: 2vh;
   right: 2vh;
 
-  font-weight: bold;
+  padding: 10px 19px;
 `;
 
 const iconCss = css`

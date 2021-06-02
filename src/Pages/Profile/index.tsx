@@ -1,11 +1,12 @@
+import { User } from "@types";
 import Navbar from "components/Navbar";
 import ProfileBanner from "components/ProfileBanner";
 import ProfileSummary from "components/ProfileSummary";
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "./styles";
 
 const Profile: React.FC = () => {
-  const user = {
+  const [ user ] = useState<User>({
     id: 1,
     name: "Dana Olivello",
     screen_name: "dolivello0",
@@ -22,7 +23,7 @@ const Profile: React.FC = () => {
     password: "1vTnnbL",
     birthdate: "9/8/1982",
     location: "Asia/Karachi",
-  };
+  });
 
   return (
     <Container>

@@ -11,7 +11,7 @@ import {
 } from "./styles";
 
 interface Props {
-  user: User
+  user: User;
 }
 
 const ProfileSummary: React.FC<Props> = ({ user }) => {
@@ -65,9 +65,7 @@ const ProfileSummary: React.FC<Props> = ({ user }) => {
         </Followage>
       </ProfileContent>
 
-      <button>
-        <EditProfile>Edit profile</EditProfile>
-      </button>
+      <EditProfile outlined >Edit profile</EditProfile>
     </Container>
   );
 };
