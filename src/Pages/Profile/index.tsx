@@ -2,6 +2,7 @@ import { User } from "@types";
 import Navbar from "components/Navbar";
 import ProfileBanner from "components/ProfileBanner";
 import ProfileSummary from "components/ProfileSummary";
+import Tabs from "components/Tabs";
 import React, { useState } from "react";
 import { Container } from "./styles";
 
@@ -35,6 +36,10 @@ const Profile: React.FC = () => {
       <ProfileSummary 
         user={user}
       />
+
+      <Tabs labels={["Tweets", "Replies", "Media", "Likes"]}>
+
+      </Tabs>
     </Container>
   );
 };

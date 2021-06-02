@@ -21,6 +21,11 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
   
+  a {
+    text-decoration: none;
+    color: var(--twitter)
+  }
+
   :root {
     --primary: #000;
     --secondary: #15181C;
