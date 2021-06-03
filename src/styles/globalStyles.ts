@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
- 
+import styled, { createGlobalStyle } from "styled-components";
+
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -44,17 +44,15 @@ const GlobalStyle = createGlobalStyle`
     --twitter-light-hover: #2C8ED6;
   }
 `;
- 
+
 export default GlobalStyle;
 
 export const PageContainer = styled.div`
-    background: var(--primary);
-    color: var(--white);
-
+  background: var(--primary);
+  color: var(--white);
 `;
 
 export const Wrapper = styled.div`
-
   max-width: 1280px;
   display: flex;
   justify-content: center;
