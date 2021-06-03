@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     background: var(--primary);
+    position: relative;
   }
 
   :root {

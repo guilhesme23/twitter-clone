@@ -10,18 +10,21 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(75px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(65px, 1fr));
   grid-gap: 5px;
 
+  flex-shrink: 0;
 `;
 
 export const Thumb = styled.div`
   background: var(--gray);
 
- 
+  width: 100%;
+  height: 100%;
   & > img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+
   }
 `;
