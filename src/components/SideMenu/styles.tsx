@@ -27,6 +27,32 @@ export const Container = styled.aside`
   }
 
   background: var(--primary);
+  position: relative;
+`;
+
+export const Wrapper = styled.div`
+  position: sticky;
+  top: 0;
+
+  z-index: 4;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+
+  @media (min-width: 1200px) {
+    width: min(250px, 100%);
+
+    > button:last-child {
+      justify-content: center;
+      margin-top: 16px;
+
+      > svg {
+        display: none;
+      }
+    }
+  }
+
   display: flex;
   flex-direction: column;
 

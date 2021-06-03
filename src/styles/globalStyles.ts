@@ -58,4 +58,6 @@ export const Wrapper = styled.div`
   max-width: 1280px;
   display: flex;
   justify-content: center;
+
+  margin: 0 auto;
 `;
