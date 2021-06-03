@@ -1,5 +1,6 @@
+import { Tweet as TweetInterface } from "@types";
 import Tweet from "components/Tweet";
-import React from "react";
+import React, { useState } from "react";
 
 import { Container } from "./styles";
 
@@ -62,9 +63,22 @@ const HistoryFeed: React.FC<Props> = (props) => {
     },
   ];
 
+  const filterTweets = (tts: TweetInterface[], filter: string) => {
+    switch (filter) {
+      case 'media':
+        return tts.filter(tt => tt.attachments?.length)
+    
+      default:
+        return tts
+    }
+  }
+
+  const filteredTweets = filterTweets(tweets, props.filter)
+
+
   return (
     <Container>
-      {tweets.map(tweet => {
+      {filteredTweets.map(tweet => {
           return <Tweet tweet={tweet} key={tweet.id}/>
       })}
     </Container>

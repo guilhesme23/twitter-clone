@@ -6,9 +6,4 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  /* @media (min-width: 601px) {
-    border-left: 1px solid var(--outline);
-    border-right: 1px solid var(--outline);
-  } */
 `;
