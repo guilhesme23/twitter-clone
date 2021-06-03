@@ -14,7 +14,7 @@ export const Container = styled.aside`
   }
 
   @media (min-width: 1200px) {
-    width: 250px;
+    width: min(250px, 100%);
 
     > button:last-child {
       justify-content: center;
@@ -60,9 +60,12 @@ export const MenuButton = styled.button<ButtonFill>`
   }
 
   &:hover {
-    color: var(--twitter);
     background-color: ${(props) =>
       props.fill ? "var(--twitter-light-hover)" : "var(--twitter-dark-hover)"};
+    color: ${(props) => (props.fill ? "" : "var(--twitter)")};
+    > svg {
+      fill: ${(props) => (props.fill ? "" : "var(--twitter)")};
+    }
   }
 
   @media (min-width: 1200px) {

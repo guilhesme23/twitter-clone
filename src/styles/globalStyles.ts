@@ -51,6 +51,7 @@ export default GlobalStyle;
 export const PageContainer = styled.div`
   background: var(--primary);
   color: var(--white);
+  position: relative;
 `;
 
 export const Wrapper = styled.div`
