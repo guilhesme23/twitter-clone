@@ -1,3 +1,4 @@
+import TweetMedia from "components/TweetMedia";
 import React, { useEffect, useState } from "react";
 import formatDate from "utils/formatDate";
 import { Tweet as TweetInterface, User } from "../../@types";
@@ -57,7 +58,10 @@ const Tweet: React.FC<Props> = (props) => {
               <li>{formatDate(props.tweet.created_at || new Date())}</li>
             </ul>
           </TweetMeta>
-          <TweetContent>{props.tweet.text}</TweetContent>
+          <TweetContent>
+            {props.tweet.text}
+            {props.tweet.attachments?.length ? <TweetMedia attachments={props.tweet.attachments}/> : ''}  
+          </TweetContent>
           <TweetNumbers>
             <div>
               <TweetIcon>
