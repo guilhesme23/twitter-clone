@@ -1,6 +1,6 @@
 import { Tweet as TweetInterface } from "@types";
 import Tweet from "components/Tweet";
-import React, { useState } from "react";
+import React from "react";
 
 import { Container } from "./styles";
 

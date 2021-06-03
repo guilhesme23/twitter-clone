@@ -13,9 +13,9 @@ interface Props {
 const TweetMedia: React.FC<Props> = ({ attachments }) => {
   return (
     <Container>
-        {attachments.map(item => {
-            return <Thumb>
-                <img src={item.media} alt="" />
+        {attachments.map((item, idx) => {
+            return <Thumb key={idx} >
+                <img key={idx} src={item.media} alt="" />
             </Thumb>
         })}
     </Container>
